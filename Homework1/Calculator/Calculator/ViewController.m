@@ -18,6 +18,7 @@
 @implementation ViewController
 
 @synthesize display;
+@synthesize verboseDisplay;
 @synthesize userIsInTheMiddleOfEnteringANumber;
 @synthesize userIsEnteringDecimal;
 @synthesize brain = _brain;
@@ -36,12 +37,16 @@
         self.display.text = digit;
         self.userIsInTheMiddleOfEnteringANumber = YES;
     }
+    
+    self.verboseDisplay.text = [self.verboseDisplay.text stringByAppendingString:digit];
 }
 
 - (IBAction)enterPressed {
     [self.brain pushOperand:[self.display.text doubleValue]];
     self.userIsInTheMiddleOfEnteringANumber = NO;
     self.userIsEnteringDecimal = NO;
+    
+    self.verboseDisplay.text = [self.verboseDisplay.text stringByAppendingString:@" "];
 }
 
 - (IBAction)operationPressed:(id)sender {
@@ -51,6 +56,8 @@
     NSString *operation = [sender currentTitle];
     double result = [self.brain performOperation:operation];
     self.display.text = [NSString stringWithFormat:@"%g", result];
+    
+    self.verboseDisplay.text = [self.verboseDisplay.text stringByAppendingString:[NSString stringWithFormat:@" %@ ", operation]];
 }
 
 - (IBAction)decimalPressed {
@@ -58,6 +65,8 @@
         self.userIsEnteringDecimal = YES;
         self.display.text = [self.display.text stringByAppendingString:@"."];
     }
+    
+    self.verboseDisplay.text = [self.verboseDisplay.text stringByAppendingString:@"."];
 }
 
 @end

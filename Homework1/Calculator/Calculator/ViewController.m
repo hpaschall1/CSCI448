@@ -32,7 +32,10 @@
 - (IBAction)digitPressed:(UIButton *)sender {
     NSString *digit;
     if ([[sender currentTitle] isEqualToString:@"π"]) {
-        digit = @"3.141592";
+        if(self.userIsEnteringDecimal == YES){
+            digit = @"";
+        } else
+            digit = @"3.141592"; // For Heather!
     } else {
         digit = [sender currentTitle];
     }
@@ -70,15 +73,24 @@
     self.display.text = [NSString stringWithFormat:@"%g", result];
     
     self.verboseDisplay.text = [self.verboseDisplay.text stringByAppendingString:[NSString stringWithFormat:@" %@ ", operation]];
+    //[self.verboseDisplay.text substringWithRange:NSMakeRange(self.verboseDisplay.text.length - 30, self.verboseDisplay.text.length-1)];
 }
 
 - (IBAction)decimalPressed {
-    if(self.userIsEnteringDecimal == NO){
+    if (self.userIsInTheMiddleOfEnteringANumber) {
+        if(self.userIsEnteringDecimal == NO){
+            self.userIsEnteringDecimal = YES;
+            self.display.text = [self.display.text stringByAppendingString:@"."];
+            self.verboseDisplay.text = [self.verboseDisplay.text stringByAppendingString:@"."];
+        }
+    } else {
+        self.display.text = @"0.";
         self.userIsEnteringDecimal = YES;
-        self.display.text = [self.display.text stringByAppendingString:@"."];
+        self.userIsInTheMiddleOfEnteringANumber = YES;
+        self.verboseDisplay.text = [self.verboseDisplay.text stringByAppendingString:@" 0."];
     }
     
-    self.verboseDisplay.text = [self.verboseDisplay.text stringByAppendingString:@"."];
+    
 }
 
 @end

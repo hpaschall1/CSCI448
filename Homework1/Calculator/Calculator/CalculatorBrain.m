@@ -24,6 +24,13 @@
     return _operandStack;
 }
 
+- (void)clearOperandStack
+{
+    while (_operandStack.count > 0) {
+        [self popOperand];
+    }
+}
+
 - (void)pushOperand:(double)operand
 {
     NSNumber *operandObject = [NSNumber numberWithDouble:operand];
@@ -52,6 +59,15 @@
     } else if ([operation isEqualToString:@"/"]) {
         double divisor = [self popOperand];
         if (divisor) result = [self popOperand] / divisor;
+    } else if ([operation isEqualToString:@"cos"]) {
+        result = cos([self popOperand]);
+    } else if ([operation isEqualToString:@"sin"]) {
+        result = sin([self popOperand]);
+    } else if ([operation isEqualToString:@"sqrt"]) {
+        double l = [self popOperand];
+        if (l > 0)
+           result = sqrt(l);
+        else result = 0;
     }
     
     [self pushOperand:result];

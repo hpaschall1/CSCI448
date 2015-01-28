@@ -30,7 +30,13 @@
 }
 
 - (IBAction)digitPressed:(UIButton *)sender {
-    NSString *digit = [sender currentTitle];
+    NSString *digit;
+    if ([[sender currentTitle] isEqualToString:@"π"]) {
+        digit = @"3.141592";
+    } else {
+        digit = [sender currentTitle];
+    }
+    
     if (self.userIsInTheMiddleOfEnteringANumber) {
         self.display.text = [self.display.text stringByAppendingString:digit];
     } else {
@@ -39,6 +45,12 @@
     }
     
     self.verboseDisplay.text = [self.verboseDisplay.text stringByAppendingString:digit];
+}
+- (IBAction)clearPressed {
+    self.verboseDisplay.text = @"";
+    self.display.text = @"";
+    [self.brain clearOperandStack];
+    self.userIsInTheMiddleOfEnteringANumber = NO;
 }
 
 - (IBAction)enterPressed {

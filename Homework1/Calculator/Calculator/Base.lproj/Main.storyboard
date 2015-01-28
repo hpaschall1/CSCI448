@@ -92,12 +92,21 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cvs-0K-HYS">
+                                <rect key="frame" x="191" y="435" width="80" height="80"/>
+                                <color key="backgroundColor" red="0.85832938759999999" green="0.85832938759999999" blue="0.85832938759999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="π"/>
+                                <state key="highlighted" backgroundImage="Default"/>
+                                <connections>
+                                    <action selector="digitPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="6Fn-bv-hrq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c5L-7v-jL9">
                                 <rect key="frame" x="104" y="261" width="80" height="80"/>
                                 <color key="backgroundColor" red="0.85832938759999999" green="0.85832938759999999" blue="0.85832938759999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="2"/>
                                 <state key="highlighted" backgroundImage="Default"/>
                                 <connections>
-                                    <action selector="digitPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="6Fn-bv-hrq"/>
+                                    <action selector="digitPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="gRt-tz-XXb"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sS5-eo-9QY">
@@ -126,6 +135,26 @@
                                 </state>
                                 <connections>
                                     <action selector="operationPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="hY6-6D-Qzr"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yl7-fJ-u3R">
+                                <rect key="frame" x="16" y="435" width="80" height="80"/>
+                                <color key="backgroundColor" red="0.85832938759999999" green="0.85832938759999999" blue="0.85832938759999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="sin">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="operationPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="AAd-zu-ppZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EsI-QH-Krf">
+                                <rect key="frame" x="104" y="435" width="80" height="80"/>
+                                <color key="backgroundColor" red="0.85832938759999999" green="0.85832938759999999" blue="0.85832938759999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="cos">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="operationPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="hiO-sg-1bE"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JqM-kJ-REA">
@@ -178,33 +207,25 @@
                                     <action selector="decimalPressed" destination="vXZ-lx-hvc" eventType="touchUpInside" id="4tH-5S-np6"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uNr-Ut-Wu3">
-                                <rect key="frame" x="16" y="435" width="80" height="80"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yyN-jw-tWC">
+                                <rect key="frame" x="279" y="435" width="80" height="80"/>
                                 <color key="backgroundColor" red="0.85832938759999999" green="0.85832938759999999" blue="0.85832938759999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="sin">
+                                <state key="normal" title="sqrt">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="operationPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="bt7-G1-alj"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p49-Kj-Pt8">
-                                <rect key="frame" x="104" y="435" width="80" height="80"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FIx-FF-5xS">
+                                <rect key="frame" x="147" y="523" width="80" height="80"/>
                                 <color key="backgroundColor" red="0.85832938759999999" green="0.85832938759999999" blue="0.85832938759999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="cos">
+                                <state key="normal" title="Clear">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BZt-lD-Rdk">
-                                <rect key="frame" x="192" y="435" width="80" height="80"/>
-                                <color key="backgroundColor" red="0.85832938759999999" green="0.85832938759999999" blue="0.85832938759999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="π">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Fx-tw-uxm">
-                                <rect key="frame" x="280" y="435" width="80" height="80"/>
-                                <color key="backgroundColor" red="0.85832938759999999" green="0.85832938759999999" blue="0.85832938759999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="√">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                                <connections>
+                                    <action selector="clearPressed" destination="vXZ-lx-hvc" eventType="touchUpInside" id="6fy-rO-vEl"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>

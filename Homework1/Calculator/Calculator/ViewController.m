@@ -56,6 +56,25 @@
     self.userIsInTheMiddleOfEnteringANumber = NO;
 }
 
+- (IBAction)backspace:(id)sender {
+    if([self.display.text length] > 1){
+        self.display.text = [self.display.text substringToIndex:[self.display.text length] - 1];
+        self.verboseDisplay.text = [self.verboseDisplay.text substringToIndex:[self.verboseDisplay.text length] - 1];
+    } else {
+        self.display.text = @"0";
+    }
+}
+
+
+- (IBAction)changeSign:(id)sender {
+    if ([self.display.text rangeOfString:@"-"].location != NSNotFound) {
+        self.display.text = [self.display.text substringFromIndex:1];
+    } else {
+        self.display.text = [NSString stringWithFormat:@"-%@", self.display.text];
+    }
+}
+
+
 - (IBAction)enterPressed {
     [self.brain pushOperand:[self.display.text doubleValue]];
     self.userIsInTheMiddleOfEnteringANumber = NO;

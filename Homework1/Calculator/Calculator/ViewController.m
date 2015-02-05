@@ -35,7 +35,7 @@
         if(self.userIsEnteringDecimal == YES){
             digit = @"";
         } else
-            digit = @"3.141592"; // For Heather!
+            digit = @"3.141592654"; // For Heather!
     } else {
         digit = [sender currentTitle];
     }
@@ -46,8 +46,6 @@
         self.display.text = digit;
         self.userIsInTheMiddleOfEnteringANumber = YES;
     }
-    
-    self.verboseDisplay.text = [self.verboseDisplay.text stringByAppendingString:digit];
 }
 - (IBAction)clearPressed {
     self.verboseDisplay.text = @"";
@@ -59,7 +57,6 @@
 - (IBAction)backspace:(id)sender {
     if([self.display.text length] > 1){
         self.display.text = [self.display.text substringToIndex:[self.display.text length] - 1];
-        self.verboseDisplay.text = [self.verboseDisplay.text substringToIndex:[self.verboseDisplay.text length] - 1];
     } else {
         self.display.text = @"0";
     }
@@ -80,7 +77,8 @@
     self.userIsInTheMiddleOfEnteringANumber = NO;
     self.userIsEnteringDecimal = NO;
     
-    self.verboseDisplay.text = [self.verboseDisplay.text stringByAppendingString:@" "];
+    self.verboseDisplay.text = [self.verboseDisplay.text stringByAppendingString:[NSString stringWithFormat:@"%@ ", self.display.text]];
+    self.display.text = @"";
 }
 
 - (IBAction)operationPressed:(id)sender {
@@ -91,8 +89,7 @@
     double result = [self.brain performOperation:operation];
     self.display.text = [NSString stringWithFormat:@"%g", result];
     
-    self.verboseDisplay.text = [self.verboseDisplay.text stringByAppendingString:[NSString stringWithFormat:@" %@ ", operation]];
-    //[self.verboseDisplay.text substringWithRange:NSMakeRange(self.verboseDisplay.text.length - 30, self.verboseDisplay.text.length-1)];
+    self.verboseDisplay.text = [self.verboseDisplay.text stringByAppendingString:[NSString stringWithFormat:@"%@ = %g", operation, result]];
 }
 
 - (IBAction)decimalPressed {

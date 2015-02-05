@@ -8,7 +8,7 @@
 //
 
 #import "GraphView.h"
-//#import "AxesDrawer.h"
+#import "AxesDrawer.h"
 
 @implementation GraphView
 

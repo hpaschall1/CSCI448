@@ -12,7 +12,7 @@
 #import "GraphView.h"
 #import "ViewController.h"
 
-@interface GraphViewController () <GraphViewDataSource, ControllerDelegate>
+@interface GraphViewController () <GraphViewDataSource, UISplitViewControllerDelegate>
 
 @property (nonatomic, weak) IBOutlet GraphView *graphView;
 
@@ -190,11 +190,11 @@
 - (float)YValueForXValue:(float)xValue inGraphView:(GraphView *)sender {
 	
 	// Find the corresponding Y value by passing the x value to the calculator Brain
-	id yValue = [CalculatorBrain runProgram:self.program usingVariableValues:
+	float yValue = [CalculatorBrain runProgram:self.program usingVariableValues:
 					 [NSDictionary dictionaryWithObject:[NSNumber numberWithFloat:xValue] 
 														  forKey:@"x"]];
 	
-	return ((NSNumber *)yValue).floatValue;	
+	return yValue;
 }
 
 

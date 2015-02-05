@@ -7,20 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2655443B1A843076007A35F7 /* AxesDrawer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2655443A1A843076007A35F7 /* AxesDrawer.m */; };
 		92D3A9241A6D9CB0005DC839 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 92D3A9231A6D9CB0005DC839 /* main.m */; };
 		92D3A9271A6D9CB0005DC839 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 92D3A9261A6D9CB0005DC839 /* AppDelegate.m */; };
 		92D3A92A1A6D9CB0005DC839 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92D3A9291A6D9CB0005DC839 /* ViewController.m */; };
-		92D3A92D1A6D9CB0005DC839 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92D3A92B1A6D9CB0005DC839 /* Main.storyboard */; };
 		92D3A92F1A6D9CB0005DC839 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92D3A92E1A6D9CB0005DC839 /* Images.xcassets */; };
 		92D3A9321A6D9CB0005DC839 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92D3A9301A6D9CB0005DC839 /* LaunchScreen.xib */; };
 		92D3A93E1A6D9CB0005DC839 /* CalculatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 92D3A93D1A6D9CB0005DC839 /* CalculatorTests.m */; };
 		92D3A9491A6DCC9E005DC839 /* CalculatorBrain.m in Sources */ = {isa = PBXBuildFile; fileRef = 92D3A9481A6DCC9E005DC839 /* CalculatorBrain.m */; };
 		E22CF5FC1A84280D00ECF67A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E22CF5F01A84280D00ECF67A /* AppDelegate.m */; };
-		E22CF5FD1A84280D00ECF67A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E22CF5F11A84280D00ECF67A /* LaunchScreen.xib */; };
 		E22CF5FE1A84280D00ECF67A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E22CF5F31A84280D00ECF67A /* Main.storyboard */; };
 		E22CF5FF1A84280D00ECF67A /* CalculatorBrain.m in Sources */ = {isa = PBXBuildFile; fileRef = E22CF5F61A84280D00ECF67A /* CalculatorBrain.m */; };
-		E22CF6001A84280D00ECF67A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E22CF5F71A84280D00ECF67A /* Images.xcassets */; };
-		E22CF6011A84280D00ECF67A /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E22CF5F81A84280D00ECF67A /* Info.plist */; };
 		E22CF6021A84280D00ECF67A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E22CF5F91A84280D00ECF67A /* main.m */; };
 		E22CF6031A84280D00ECF67A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E22CF5FB1A84280D00ECF67A /* ViewController.m */; };
 		E22CF6081A84289D00ECF67A /* GraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = E22CF6051A84289D00ECF67A /* GraphView.m */; };
@@ -38,6 +35,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		265544391A843076007A35F7 /* AxesDrawer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxesDrawer.h; sourceTree = "<group>"; };
+		2655443A1A843076007A35F7 /* AxesDrawer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxesDrawer.m; sourceTree = "<group>"; };
 		92D3A91E1A6D9CB0005DC839 /* Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92D3A9221A6D9CB0005DC839 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		92D3A9231A6D9CB0005DC839 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -112,6 +111,8 @@
 				E22CF5EE1A84280D00ECF67A /* Calculator */,
 				92D3A9251A6D9CB0005DC839 /* AppDelegate.h */,
 				92D3A9261A6D9CB0005DC839 /* AppDelegate.m */,
+				265544391A843076007A35F7 /* AxesDrawer.h */,
+				2655443A1A843076007A35F7 /* AxesDrawer.m */,
 				92D3A9281A6D9CB0005DC839 /* ViewController.h */,
 				92D3A9291A6D9CB0005DC839 /* ViewController.m */,
 				92D3A92B1A6D9CB0005DC839 /* Main.storyboard */,
@@ -252,13 +253,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E22CF5FD1A84280D00ECF67A /* LaunchScreen.xib in Resources */,
 				E22CF5FE1A84280D00ECF67A /* Main.storyboard in Resources */,
-				92D3A92D1A6D9CB0005DC839 /* Main.storyboard in Resources */,
-				E22CF6001A84280D00ECF67A /* Images.xcassets in Resources */,
 				92D3A9321A6D9CB0005DC839 /* LaunchScreen.xib in Resources */,
 				92D3A92F1A6D9CB0005DC839 /* Images.xcassets in Resources */,
-				E22CF6011A84280D00ECF67A /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,6 +274,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				92D3A92A1A6D9CB0005DC839 /* ViewController.m in Sources */,
+				2655443B1A843076007A35F7 /* AxesDrawer.m in Sources */,
 				92D3A9271A6D9CB0005DC839 /* AppDelegate.m in Sources */,
 				E22CF6031A84280D00ECF67A /* ViewController.m in Sources */,
 				E22CF6091A84289D00ECF67A /* GraphViewController.m in Sources */,

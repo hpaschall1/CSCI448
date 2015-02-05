@@ -14,4 +14,7 @@
 - (void)pushOperand:(double)operand;
 - (double)performOperation:(NSString *)operation;
 
++ (NSString*)descriptionOfProgram:(id) program;
++ (float)runProgram:(id) program usingVariableValues:(NSDictionary*) dict;
+
 @end

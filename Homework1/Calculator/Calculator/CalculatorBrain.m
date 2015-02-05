@@ -16,6 +16,8 @@
 
 @synthesize operandStack = _operandStack;
 
+#pragma mark - Instance Methods
+
 - (NSMutableArray *)operandStack
 {
     if (!_operandStack) {
@@ -73,6 +75,18 @@
     [self pushOperand:result];
     
     return result;
+}
+
+#pragma mark - Class Methods
+
++ (NSString*)descriptionOfProgram:(id) program{
+#warning Implement me
+    return @"";
+}
+
++ (float)runProgram:(id) program usingVariableValues:(NSDictionary*) dict{
+#warning Implement me
+    return 0.0f;
 }
 
 @end

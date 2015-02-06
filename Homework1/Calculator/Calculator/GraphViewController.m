@@ -8,9 +8,9 @@
 //
 
 #import "GraphViewController.h"
-#import "CalculatorBrain.h"
 #import "GraphView.h"
 #import "ViewController.h"
+#import "CalculatorBrain.h"
 
 @interface GraphViewController () <GraphViewDataSource, UISplitViewControllerDelegate>
 

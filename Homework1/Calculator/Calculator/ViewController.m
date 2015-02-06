@@ -28,6 +28,11 @@
 
 @synthesize brain = _brain;
 
+-(void)viewDidLoad {
+    // Leave ONLY this function in the buffer storyboard
+    NSLog(@"I loaded!");
+}
+
 - (CalculatorBrain *)brain
 {
     if (!_brain) _brain = [[CalculatorBrain alloc] init];

@@ -263,9 +263,6 @@
                                 <state key="normal" title="x">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <action selector="digitPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="M70-I8-G2P"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -280,44 +277,6 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="1Zo-FO-vc0">
-            <objects>
-                <viewController id="Upg-jC-Zms" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="FBw-jM-Rp4"/>
-                        <viewControllerLayoutGuide type="bottom" id="jua-Ay-PWs"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="x6i-Gr-Pug">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="700"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="375" height="700"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="LTD-2U-YPq" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1016.5" y="363"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="olz-G5-y41">
-            <objects>
-                <viewController id="OHb-0v-pa0" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="7CR-8k-IE6"/>
-                        <viewControllerLayoutGuide type="bottom" id="BMy-rI-l38"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="RLq-S4-Y3F">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Fkt-gA-guy" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1129" y="1087"/>
         </scene>
     </scenes>
     <resources>

@@ -66,6 +66,7 @@
         self.userIsInTheMiddleOfEnteringANumber = YES;
     }
 }
+
 - (IBAction)clearPressed {
     self.verboseDisplay.text = @"";
     self.display.text = @"";
@@ -139,7 +140,7 @@
 }
 
 - (IBAction)graphPushed {
-    NSLog(@"The Graph button was pushed!");
+    
 }
 
 

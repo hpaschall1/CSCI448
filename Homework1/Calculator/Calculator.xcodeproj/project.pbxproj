@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2655443B1A843076007A35F7 /* AxesDrawer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2655443A1A843076007A35F7 /* AxesDrawer.m */; };
+		2655443D1A844E53007A35F7 /* GraphViewIphone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2655443C1A844E53007A35F7 /* GraphViewIphone.storyboard */; };
+		2655443F1A844EA5007A35F7 /* GraphViewIpad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2655443E1A844EA5007A35F7 /* GraphViewIpad.storyboard */; };
 		92D3A92A1A6D9CB0005DC839 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92D3A9291A6D9CB0005DC839 /* ViewController.m */; };
 		92D3A92F1A6D9CB0005DC839 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92D3A92E1A6D9CB0005DC839 /* Images.xcassets */; };
 		92D3A9321A6D9CB0005DC839 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92D3A9301A6D9CB0005DC839 /* LaunchScreen.xib */; };
@@ -33,6 +35,8 @@
 /* Begin PBXFileReference section */
 		265544391A843076007A35F7 /* AxesDrawer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxesDrawer.h; sourceTree = "<group>"; };
 		2655443A1A843076007A35F7 /* AxesDrawer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxesDrawer.m; sourceTree = "<group>"; };
+		2655443C1A844E53007A35F7 /* GraphViewIphone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = GraphViewIphone.storyboard; sourceTree = "<group>"; };
+		2655443E1A844EA5007A35F7 /* GraphViewIpad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = GraphViewIpad.storyboard; sourceTree = "<group>"; };
 		92D3A91E1A6D9CB0005DC839 /* Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92D3A9221A6D9CB0005DC839 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		92D3A9231A6D9CB0005DC839 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -112,6 +116,8 @@
 				92D3A9281A6D9CB0005DC839 /* ViewController.h */,
 				92D3A9291A6D9CB0005DC839 /* ViewController.m */,
 				92D3A92B1A6D9CB0005DC839 /* Main.storyboard */,
+				2655443C1A844E53007A35F7 /* GraphViewIphone.storyboard */,
+				2655443E1A844EA5007A35F7 /* GraphViewIpad.storyboard */,
 				E22CF6041A84289D00ECF67A /* GraphView.h */,
 				E22CF6051A84289D00ECF67A /* GraphView.m */,
 				E22CF6061A84289D00ECF67A /* GraphViewController.h */,
@@ -250,7 +256,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E22CF5FE1A84280D00ECF67A /* Main.storyboard in Resources */,
+				2655443D1A844E53007A35F7 /* GraphViewIphone.storyboard in Resources */,
 				92D3A9321A6D9CB0005DC839 /* LaunchScreen.xib in Resources */,
+				2655443F1A844EA5007A35F7 /* GraphViewIpad.storyboard in Resources */,
 				92D3A92F1A6D9CB0005DC839 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -416,6 +424,7 @@
 				INFOPLIST_FILE = Calculator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -426,6 +435,7 @@
 				INFOPLIST_FILE = Calculator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

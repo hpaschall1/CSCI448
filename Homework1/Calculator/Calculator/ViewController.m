@@ -14,6 +14,7 @@
 @property (nonatomic, strong) CalculatorBrain *brain;
 @property (nonatomic) BOOL userIsEnteringDecimal;
 @property (nonatomic) BOOL userHasEnteredASpecialDigit;
+@property (nonatomic) BOOL userHasEnteredTheVariable;
 @end
 
 @implementation ViewController
@@ -23,6 +24,8 @@
 @synthesize userIsInTheMiddleOfEnteringANumber;
 @synthesize userIsEnteringDecimal;
 @synthesize userHasEnteredASpecialDigit;
+@synthesize userHasEnteredTheVariable;
+
 @synthesize brain = _brain;
 
 - (CalculatorBrain *)brain
@@ -44,6 +47,7 @@
         if(self.userIsInTheMiddleOfEnteringANumber == YES){
             digit = @"";
         } else {
+            self.userHasEnteredTheVariable = YES;
             digit = @"x";
         }
         self.userHasEnteredASpecialDigit = YES;
@@ -68,6 +72,7 @@
     [self.brain clearOperandStack];
     self.userIsInTheMiddleOfEnteringANumber = NO;
     self.userHasEnteredASpecialDigit = NO;
+    self.userHasEnteredTheVariable = NO;
 }
 
 - (IBAction)backspace:(id)sender {
@@ -101,11 +106,21 @@
     if (self.userIsInTheMiddleOfEnteringANumber) {
         [self enterPressed];
     }
-    NSString *operation = [sender currentTitle];
-    double result = [self.brain performOperation:operation];
-    self.display.text = [NSString stringWithFormat:@"%g", result];
     
-    self.verboseDisplay.text = [self.verboseDisplay.text stringByAppendingString:[NSString stringWithFormat:@"%@ = %g", operation, result]];
+    NSString *operation = [sender currentTitle];
+    
+    if(self.userHasEnteredTheVariable == NO){
+        
+        double result = [self.brain performOperation:operation];
+        self.display.text = [NSString stringWithFormat:@"%g", result];
+    
+        self.verboseDisplay.text = [self.verboseDisplay.text stringByAppendingString:[NSString stringWithFormat:@"%@ = %g", operation, result]];
+
+    } else {
+        self.verboseDisplay.text = [self.verboseDisplay.text stringByAppendingString:operation];
+    }
+    
+    self.userHasEnteredTheVariable = NO;
 }
 
 - (IBAction)decimalPressed {

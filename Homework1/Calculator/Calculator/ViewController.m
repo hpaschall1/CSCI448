@@ -13,6 +13,7 @@
 @property (nonatomic) BOOL userIsInTheMiddleOfEnteringANumber;
 @property (nonatomic, strong) CalculatorBrain *brain;
 @property (nonatomic) BOOL userIsEnteringDecimal;
+@property (nonatomic) BOOL userHasEnteredASpecialDigit;
 @end
 
 @implementation ViewController
@@ -21,6 +22,7 @@
 @synthesize verboseDisplay;
 @synthesize userIsInTheMiddleOfEnteringANumber;
 @synthesize userIsEnteringDecimal;
+@synthesize userHasEnteredASpecialDigit;
 @synthesize brain = _brain;
 
 - (CalculatorBrain *)brain
@@ -32,12 +34,25 @@
 - (IBAction)digitPressed:(UIButton *)sender {
     NSString *digit;
     if ([[sender currentTitle] isEqualToString:@"π"]) {
-        if(self.userIsEnteringDecimal == YES){
+        if(self.userIsInTheMiddleOfEnteringANumber == YES){
             digit = @"";
-        } else
+        } else {
             digit = @"3.141592654"; // For Heather!
+        }
+        self.userHasEnteredASpecialDigit = YES;
+    } else if([[sender currentTitle] isEqualToString:@"x"]){
+        if(self.userIsInTheMiddleOfEnteringANumber == YES){
+            digit = @"";
+        } else {
+            digit = @"x";
+        }
+        self.userHasEnteredASpecialDigit = YES;
     } else {
-        digit = [sender currentTitle];
+        if(self.userHasEnteredASpecialDigit){
+            digit = @"";
+        } else {
+            digit = [sender currentTitle];
+        }
     }
     
     if (self.userIsInTheMiddleOfEnteringANumber) {
@@ -52,6 +67,7 @@
     self.display.text = @"";
     [self.brain clearOperandStack];
     self.userIsInTheMiddleOfEnteringANumber = NO;
+    self.userHasEnteredASpecialDigit = NO;
 }
 
 - (IBAction)backspace:(id)sender {
@@ -71,11 +87,11 @@
     }
 }
 
-
 - (IBAction)enterPressed {
     [self.brain pushOperand:[self.display.text doubleValue]];
     self.userIsInTheMiddleOfEnteringANumber = NO;
     self.userIsEnteringDecimal = NO;
+    self.userHasEnteredASpecialDigit = NO;
     
     self.verboseDisplay.text = [self.verboseDisplay.text stringByAppendingString:[NSString stringWithFormat:@"%@ ", self.display.text]];
     self.display.text = @"";
@@ -105,8 +121,11 @@
         self.userIsInTheMiddleOfEnteringANumber = YES;
         self.verboseDisplay.text = [self.verboseDisplay.text stringByAppendingString:@" 0."];
     }
-    
-    
 }
+
+- (IBAction)graphPushed {
+    NSLog(@"The Graph button was pushed!");
+}
+
 
 @end

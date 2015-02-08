@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <scenes>
+        <!--Input Iphone View Controller-->
+        <scene sceneID="oI8-pK-xXa">
+            <objects>
+                <viewController storyboardIdentifier="InputIphoneViewController" id="P4k-Wa-PSc" customClass="InputIphoneViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8F5-hM-E8h"/>
+                        <viewControllerLayoutGuide type="bottom" id="Lt4-A6-dd0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="yyM-Gt-dgN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="700"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1gK-3S-dt9">
+                                <rect key="frame" x="16" y="64" width="343" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8A5-aM-J5X">
+                                <rect key="frame" x="279" y="479" width="80" height="80"/>
+                                <color key="backgroundColor" red="0.85832938759999999" green="0.85832938759999999" blue="0.85832938759999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="-">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="operationPressed:" destination="P4k-Wa-PSc" eventType="touchUpInside" id="6yO-Gw-QbJ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gzk-Sb-PCI">
+                                <rect key="frame" x="16" y="129" width="80" height="80"/>
+                                <color key="backgroundColor" red="0.85832938759999999" green="0.85832938759999999" blue="0.85832938759999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Clear">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="clearPressed" destination="P4k-Wa-PSc" eventType="touchUpInside" id="soq-9Z-hQQ"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="right" lineBreakMode="headTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lir-Wu-d77">
+                                <rect key="frame" x="16" y="94" width="343" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IXT-Mt-hUB">
+                                <rect key="frame" x="279" y="393" width="80" height="80"/>
+                                <color key="backgroundColor" red="0.85832938759999999" green="0.85832938759999999" blue="0.85832938759999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="+">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="operationPressed:" destination="P4k-Wa-PSc" eventType="touchUpInside" id="wth-KQ-gaK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2pu-ps-NcH">
+                                <rect key="frame" x="16" y="479" width="80" height="80"/>
+                                <color key="backgroundColor" red="0.85832938759999999" green="0.85832938759999999" blue="0.85832938759999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title=".">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="decimalPressed" destination="P4k-Wa-PSc" eventType="touchUpInside" id="EHL-MY-SxN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oRH-p2-pCl">
+                                <rect key="frame" x="279" y="217" width="80" height="80"/>
+                                <color key="backgroundColor" red="0.85832938759999999" green="0.85832938759999999" blue="0.85832938759999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="*">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="operationPressed:" destination="P4k-Wa-PSc" eventType="touchUpInside" id="0nY-Zj-cgM"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lVZ-SG-sK7">
+                                <rect key="frame" x="191" y="567" width="80" height="80"/>
+                                <color key="backgroundColor" red="0.85832938759999999" green="0.85832938759999999" blue="0.85832938759999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="π"/>
+                                <state key="highlighted" backgroundImage="Default"/>
+                                <connections>
+                                    <action selector="digitPressed:" destination="P4k-Wa-PSc" eventType="touchUpInside" id="Ny3-uP-OMz"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zhn-S1-Zc3">
+                                <rect key="frame" x="16" y="567" width="80" height="80"/>
+                                <color key="backgroundColor" red="0.85832938759999999" green="0.85832938759999999" blue="0.85832938759999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="sin">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="operationPressed:" destination="P4k-Wa-PSc" eventType="touchUpInside" id="5Df-LK-i1d"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tOa-7E-egi">
+                                <rect key="frame" x="279" y="20" width="80" height="36"/>
+                                <color key="backgroundColor" red="0.85832938759999999" green="0.85832938759999999" blue="0.85832938759999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Graph">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="graphPushed" destination="P4k-Wa-PSc" eventType="touchUpInside" id="oZa-WZ-1OS"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8aR-qb-7QK">
+                                <rect key="frame" x="104" y="567" width="80" height="80"/>
+                                <color key="backgroundColor" red="0.85832938759999999" green="0.85832938759999999" blue="0.85832938759999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="cos">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="operationPressed:" destination="P4k-Wa-PSc" eventType="touchUpInside" id="mDT-nQ-Pdg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="82c-Yd-LgC">
+                                <rect key="frame" x="279" y="305" width="80" height="80"/>
+                                <color key="backgroundColor" red="0.85832938759999999" green="0.85832938759999999" blue="0.85832938759999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="/">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="operationPressed:" destination="P4k-Wa-PSc" eventType="touchUpInside" id="Wj6-gb-WFK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hgj-m7-rtN">
+                                <rect key="frame" x="279" y="567" width="80" height="80"/>
+                                <color key="backgroundColor" red="0.85832938759999999" green="0.85832938759999999" blue="0.85832938759999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="√">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="operationPressed:" destination="P4k-Wa-PSc" eventType="touchUpInside" id="idc-cd-cWE"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0tF-gm-Duh">
+                                <rect key="frame" x="192" y="479" width="80" height="80"/>
+                                <color key="backgroundColor" red="0.85832938759999999" green="0.85832938759999999" blue="0.85832938759999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Enter">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="enterPressed" destination="P4k-Wa-PSc" eventType="touchUpInside" id="r3a-uY-ZjO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fyS-ti-NW5">
+                                <rect key="frame" x="279" y="129" width="80" height="80"/>
+                                <color key="backgroundColor" red="0.85832938759999999" green="0.85832938759999999" blue="0.85832938759999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="←">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="backspace:" destination="P4k-Wa-PSc" eventType="touchUpInside" id="XVz-Jx-bqx"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ueI-wo-bdq">
+                                <rect key="frame" x="104" y="129" width="80" height="80"/>
+                                <color key="backgroundColor" red="0.85832938759999999" green="0.85832938759999999" blue="0.85832938759999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="+/-">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="changeSign:" destination="P4k-Wa-PSc" eventType="touchUpInside" id="27M-HO-iz2"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C8E-VL-SAy">
+                                <rect key="frame" x="104" y="217" width="80" height="80"/>
+                                <color key="backgroundColor" red="0.85832938759999999" green="0.85832938759999999" blue="0.85832938759999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="8"/>
+                                <state key="highlighted" backgroundImage="Default"/>
+                                <connections>
+                                    <action selector="digitPressed:" destination="P4k-Wa-PSc" eventType="touchUpInside" id="IEA-jC-d01"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dZF-et-OaX">
+                                <rect key="frame" x="16" y="217" width="80" height="80"/>
+                                <color key="backgroundColor" red="0.85832938759999999" green="0.85832938759999999" blue="0.85832938759999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="7"/>
+                                <state key="highlighted" backgroundImage="Default"/>
+                                <connections>
+                                    <action selector="digitPressed:" destination="P4k-Wa-PSc" eventType="touchUpInside" id="wR5-yP-KNl"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tz8-oM-GSo">
+                                <rect key="frame" x="191" y="129" width="80" height="80"/>
+                                <color key="backgroundColor" red="0.85832938759999999" green="0.85832938759999999" blue="0.85832938759999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="x">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="digitPressed:" destination="P4k-Wa-PSc" eventType="touchUpInside" id="k3r-EO-f5K"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rsB-sA-j0b">
+                                <rect key="frame" x="192" y="305" width="80" height="80"/>
+                                <color key="backgroundColor" red="0.85832938759999999" green="0.85832938759999999" blue="0.85832938759999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="6"/>
+                                <state key="highlighted" backgroundImage="Default"/>
+                                <connections>
+                                    <action selector="digitPressed:" destination="P4k-Wa-PSc" eventType="touchUpInside" id="o05-dA-AtW"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LCu-jg-4zR">
+                                <rect key="frame" x="104" y="393" width="80" height="80"/>
+                                <color key="backgroundColor" red="0.85832938759999999" green="0.85832938759999999" blue="0.85832938759999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="2"/>
+                                <state key="highlighted" backgroundImage="Default"/>
+                                <connections>
+                                    <action selector="digitPressed:" destination="P4k-Wa-PSc" eventType="touchUpInside" id="fvn-dC-ZxB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9LV-kk-4xM">
+                                <rect key="frame" x="16" y="393" width="80" height="80"/>
+                                <color key="backgroundColor" red="0.85832938759999999" green="0.85832938759999999" blue="0.85832938759999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="1"/>
+                                <state key="highlighted" backgroundImage="Default"/>
+                                <connections>
+                                    <action selector="digitPressed:" destination="P4k-Wa-PSc" eventType="touchUpInside" id="5Gn-N1-C2e"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CIu-m9-gHG">
+                                <rect key="frame" x="104" y="305" width="80" height="80"/>
+                                <color key="backgroundColor" red="0.85832938759999999" green="0.85832938759999999" blue="0.85832938759999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="5"/>
+                                <state key="highlighted" backgroundImage="Default"/>
+                                <connections>
+                                    <action selector="digitPressed:" destination="P4k-Wa-PSc" eventType="touchUpInside" id="d3j-Eq-c6I"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f89-CB-c6b">
+                                <rect key="frame" x="192" y="393" width="80" height="80"/>
+                                <color key="backgroundColor" red="0.85832938759999999" green="0.85832938759999999" blue="0.85832938759999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="3"/>
+                                <state key="highlighted" backgroundImage="Default"/>
+                                <connections>
+                                    <action selector="digitPressed:" destination="P4k-Wa-PSc" eventType="touchUpInside" id="Zl6-Ih-Hv1"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rbp-z4-p1E">
+                                <rect key="frame" x="16" y="305" width="80" height="80"/>
+                                <color key="backgroundColor" red="0.85832938759999999" green="0.85832938759999999" blue="0.85832938759999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="4"/>
+                                <state key="highlighted" backgroundImage="Default"/>
+                                <connections>
+                                    <action selector="digitPressed:" destination="P4k-Wa-PSc" eventType="touchUpInside" id="EbB-In-rZh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MvR-R4-lS4">
+                                <rect key="frame" x="104" y="479" width="80" height="80"/>
+                                <color key="backgroundColor" red="0.85832938759999999" green="0.85832938759999999" blue="0.85832938759999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="0"/>
+                                <state key="highlighted" backgroundImage="Default"/>
+                                <connections>
+                                    <action selector="digitPressed:" destination="P4k-Wa-PSc" eventType="touchUpInside" id="IiW-qX-f3T"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KBM-AZ-plY">
+                                <rect key="frame" x="192" y="217" width="80" height="80"/>
+                                <color key="backgroundColor" red="0.85832938759999999" green="0.85832938759999999" blue="0.85832938759999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="9"/>
+                                <state key="highlighted" backgroundImage="Default"/>
+                                <connections>
+                                    <action selector="digitPressed:" destination="P4k-Wa-PSc" eventType="touchUpInside" id="dDA-3X-e50"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="700"/>
+                    <connections>
+                        <outlet property="display" destination="1gK-3S-dt9" id="wnh-cB-EFM"/>
+                        <outlet property="verboseDisplay" destination="lir-Wu-d77" id="NeL-ID-tg8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vKT-bM-TDv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="292" y="396"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Default" width="16" height="16"/>
+    </resources>
+</document>

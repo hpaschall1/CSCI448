@@ -28,7 +28,9 @@
 		UIFont *font = [UIFont systemFontOfSize:HASH_MARK_FONT_SIZE];
 		
 		CGRect textRect;
-		//textRect.size = [text sizeWithFont:font];
+        
+        // textRect.size = [text sizeWithFont:font];
+        // is deprecated as of iOS 7
         
         NSDictionary *attributes = @{NSFontAttributeName: font};
         textRect.size = [text sizeWithAttributes:attributes];
@@ -44,6 +46,7 @@
 			case ANCHOR_RIGHT: textRect.origin.x -= textRect.size.width / 2+ HORIZONTAL_TEXT_MARGIN; break;
 		}
 		
+        // Same here, deprecated as of iOS 7
 		[text drawInRect:textRect withAttributes:attributes];
 	}
 }

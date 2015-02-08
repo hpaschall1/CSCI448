@@ -14,8 +14,12 @@
 @implementation ViewController
 
 -(void)viewDidAppear:(BOOL)animated {
+    // Main storyboard is a dummy so we can load it then switch to the device appropriate view controller
+    // This is because the project statement does not specify exactly how this was to be done.
+    
     // Buffer view to create and switch to other views depending on device
     if([[UIDevice currentDevice]userInterfaceIdiom]==UIUserInterfaceIdiomPhone){
+        
         // Get the storyboard by name
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"InputIphoneView" bundle:nil];
         

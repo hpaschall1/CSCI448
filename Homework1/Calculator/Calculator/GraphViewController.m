@@ -23,9 +23,17 @@
 @synthesize program = _program;
 @synthesize graphView = _graphView;
 
+- (IBAction)backWasPressed {
+    // Returns to the former vc if iphone
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 - (void)awakeFromNib {
 	[super awakeFromNib];
+    
+    // If we aren't an iphone, hide the back button
+    self.backButton.hidden = [[UIDevice currentDevice]userInterfaceIdiom] !=UIUserInterfaceIdiomPhone;
+    
 	self.splitViewController.delegate = self;
 	self.splitViewController.presentsWithGesture = NO;	
 }

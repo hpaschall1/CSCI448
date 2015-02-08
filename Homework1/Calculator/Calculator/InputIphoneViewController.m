@@ -141,7 +141,17 @@
 
 - (IBAction)graphPushed {
     if([[UIDevice currentDevice]userInterfaceIdiom]==UIUserInterfaceIdiomPhone){
-        NSLog(@"We should segue into the other iphone view...");
+        // Get the storyboard by name
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"GraphIphoneView" bundle:nil];
+        
+        // Link it to the viewcontroller called "GraphIphoneViewController"
+        UIViewController *viewcontroller = [storyboard instantiateViewControllerWithIdentifier:@"GraphIphoneViewController"];
+        
+        // Change the animation
+        viewcontroller.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+        
+        // Show it off
+        [self presentViewController:viewcontroller animated:YES completion:NULL];
     } else {
         NSLog(@"We should contact the ipad layout and tell it we need to graph stuff...");
     }

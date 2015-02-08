@@ -12,5 +12,6 @@
 
 @property (nonatomic, strong) id program;
 - (void)refreshView;
+@property (weak, nonatomic) IBOutlet UIButton *backButton;
 
 @end

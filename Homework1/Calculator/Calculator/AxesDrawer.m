@@ -28,7 +28,12 @@
 		UIFont *font = [UIFont systemFontOfSize:HASH_MARK_FONT_SIZE];
 		
 		CGRect textRect;
-		textRect.size = [text sizeWithFont:font];
+		//textRect.size = [text sizeWithFont:font];
+        
+        NSDictionary *attributes = @{NSFontAttributeName: font};
+        textRect.size = [text sizeWithAttributes:attributes];
+        
+        
 		textRect.origin.x = location.x - textRect.size.width / 2;
 		textRect.origin.y = location.y - textRect.size.height / 2;
 		
@@ -39,7 +44,7 @@
 			case ANCHOR_RIGHT: textRect.origin.x -= textRect.size.width / 2+ HORIZONTAL_TEXT_MARGIN; break;
 		}
 		
-		[text drawInRect:textRect withFont:font];
+		[text drawInRect:textRect withAttributes:attributes];
 	}
 }
 

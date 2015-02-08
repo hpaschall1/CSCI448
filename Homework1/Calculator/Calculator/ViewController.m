@@ -29,7 +29,11 @@
         // If you've got it, flaunt it
         [self presentViewController:viewcontroller animated:NO completion:NULL];
     } else {
-        NSLog(@"We're using an iPad!");
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"GraphIpadView" bundle:nil];
+        
+        UIViewController *viewcontroller = [storyboard instantiateViewControllerWithIdentifier:@"GraphIpadViewController"];
+        
+        [self presentViewController:viewcontroller animated:NO completion:NULL];
     }
 }
 

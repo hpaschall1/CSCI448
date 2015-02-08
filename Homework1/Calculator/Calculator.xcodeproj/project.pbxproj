@@ -10,6 +10,7 @@
 		264624A51A87D8D900EB1E4C /* InputIphoneView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 264624A41A87D8D900EB1E4C /* InputIphoneView.storyboard */; };
 		264624A81A87D94B00EB1E4C /* InputIphoneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 264624A71A87D94B00EB1E4C /* InputIphoneViewController.m */; };
 		264624AA1A87E27E00EB1E4C /* GraphIphoneView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 264624A91A87E27E00EB1E4C /* GraphIphoneView.storyboard */; };
+		264624AC1A87FDF900EB1E4C /* GraphIpadView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 264624AB1A87FDF900EB1E4C /* GraphIpadView.storyboard */; };
 		2655443B1A843076007A35F7 /* AxesDrawer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2655443A1A843076007A35F7 /* AxesDrawer.m */; };
 		92D3A92A1A6D9CB0005DC839 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92D3A9291A6D9CB0005DC839 /* ViewController.m */; };
 		92D3A92F1A6D9CB0005DC839 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92D3A92E1A6D9CB0005DC839 /* Images.xcassets */; };
@@ -38,6 +39,7 @@
 		264624A61A87D94B00EB1E4C /* InputIphoneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputIphoneViewController.h; sourceTree = "<group>"; };
 		264624A71A87D94B00EB1E4C /* InputIphoneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputIphoneViewController.m; sourceTree = "<group>"; };
 		264624A91A87E27E00EB1E4C /* GraphIphoneView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = GraphIphoneView.storyboard; path = ../GraphIphoneView.storyboard; sourceTree = "<group>"; };
+		264624AB1A87FDF900EB1E4C /* GraphIpadView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = GraphIpadView.storyboard; sourceTree = "<group>"; };
 		265544391A843076007A35F7 /* AxesDrawer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxesDrawer.h; sourceTree = "<group>"; };
 		2655443A1A843076007A35F7 /* AxesDrawer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxesDrawer.m; sourceTree = "<group>"; };
 		92D3A91E1A6D9CB0005DC839 /* Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -123,6 +125,7 @@
 				264624A61A87D94B00EB1E4C /* InputIphoneViewController.h */,
 				264624A71A87D94B00EB1E4C /* InputIphoneViewController.m */,
 				264624A91A87E27E00EB1E4C /* GraphIphoneView.storyboard */,
+				264624AB1A87FDF900EB1E4C /* GraphIpadView.storyboard */,
 				E22CF6041A84289D00ECF67A /* GraphView.h */,
 				E22CF6051A84289D00ECF67A /* GraphView.m */,
 				E22CF6061A84289D00ECF67A /* GraphViewController.h */,
@@ -260,6 +263,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				264624AC1A87FDF900EB1E4C /* GraphIpadView.storyboard in Resources */,
 				E22CF5FE1A84280D00ECF67A /* Main.storyboard in Resources */,
 				92D3A9321A6D9CB0005DC839 /* LaunchScreen.xib in Resources */,
 				264624A51A87D8D900EB1E4C /* InputIphoneView.storyboard in Resources */,

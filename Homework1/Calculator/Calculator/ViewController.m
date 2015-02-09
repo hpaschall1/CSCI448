@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "GraphIpadViewController.h"
 
 @interface ViewController ()
 @end
@@ -29,9 +30,8 @@
         // If you've got it, flaunt it
         [self presentViewController:viewcontroller animated:NO completion:NULL];
     } else {
-        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"GraphIpadView" bundle:nil];
         
-        UIViewController *viewcontroller = [storyboard instantiateViewControllerWithIdentifier:@"GraphIpadViewController"];
+        UIViewController *viewcontroller = [[GraphIpadViewController alloc] init];
         
         [self presentViewController:viewcontroller animated:NO completion:NULL];
     }

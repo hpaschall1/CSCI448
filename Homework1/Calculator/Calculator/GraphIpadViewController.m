@@ -17,10 +17,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"InputIphoneView" bundle:nil];
-    UIViewController *newviewcontroller = [storyboard instantiateViewControllerWithIdentifier:@"InputIphoneViewController"];
+    UIStoryboard *inputSB = [UIStoryboard storyboardWithName:@"InputIphoneView" bundle:nil];
+    UIViewController *inputVC = [inputSB instantiateViewControllerWithIdentifier:@"InputIphoneViewController"];
     
-    NSArray *newVCs = [NSArray arrayWithObjects:[self.viewControllers objectAtIndex:0], newviewcontroller, nil];
+    UIStoryboard *graphSB = [UIStoryboard storyboardWithName:@"GraphIphoneView" bundle:nil];
+    UIViewController *graphVC = [graphSB instantiateViewControllerWithIdentifier:@"GraphIphoneViewController"];
+    
+    NSArray *newVCs = [NSArray arrayWithObjects:inputVC, graphVC, nil];
     
     self.viewControllers = newVCs;
 }

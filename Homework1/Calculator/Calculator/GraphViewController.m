@@ -28,11 +28,18 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (void)awakeFromNib {
-	[super awakeFromNib];
+- (void)viewDidAppear:(BOOL)animated {
+	// Changed this from awakeFromNib - we aren't using a nib
+    
+    BOOL using_iphone = [[UIDevice currentDevice]userInterfaceIdiom] == UIUserInterfaceIdiomPhone;
     
     // If we aren't an iphone, hide the back button
-    self.backButton.hidden = [[UIDevice currentDevice]userInterfaceIdiom] !=UIUserInterfaceIdiomPhone;
+    self.backButton.hidden = ! using_iphone;
+    
+    if(!using_iphone){
+        NSLog(@"SHIT SHIT SHIT!");
+    }
+    
     
 	self.splitViewController.delegate = self;
 	self.splitViewController.presentsWithGesture = NO;	

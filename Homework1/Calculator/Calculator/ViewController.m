@@ -31,9 +31,21 @@
         [self presentViewController:viewcontroller animated:NO completion:NULL];
     } else {
         
-        UIViewController *viewcontroller = [[GraphIpadViewController alloc] init];
+        // This one doesn't have a storyboard
+        UISplitViewController *splitty = [[GraphIpadViewController alloc] init];
         
-        [self presentViewController:viewcontroller animated:NO completion:NULL];
+        // Load up the detail and master view controllers
+        UIStoryboard *inputSB = [UIStoryboard storyboardWithName:@"InputIphoneView" bundle:nil];
+        UIViewController *inputVC = [inputSB instantiateViewControllerWithIdentifier:@"InputIphoneViewController"];
+        
+        UIStoryboard *graphSB = [UIStoryboard storyboardWithName:@"GraphIphoneView" bundle:nil];
+        UIViewController *graphVC = [graphSB instantiateViewControllerWithIdentifier:@"GraphIphoneViewController"];
+        
+        NSArray *newVCs = [NSArray arrayWithObjects:graphVC, inputVC, nil];
+        
+        splitty.viewControllers = newVCs;
+        
+        [self presentViewController:splitty animated:NO completion:NULL];
     }
 }
 

@@ -7,7 +7,6 @@
 //
 
 #import "ViewController.h"
-#import "GraphIpadViewController.h"
 
 @interface ViewController ()
 @end
@@ -32,7 +31,7 @@
     } else {
         
         // This one doesn't have a storyboard
-        UISplitViewController *splitty = [[GraphIpadViewController alloc] init];
+        UISplitViewController *splitty = [[UISplitViewController alloc] init];
         
         // Load up the detail and master view controllers
         UIStoryboard *inputSB = [UIStoryboard storyboardWithName:@"InputIphoneView" bundle:nil];
@@ -41,9 +40,13 @@
         UIStoryboard *graphSB = [UIStoryboard storyboardWithName:@"GraphIphoneView" bundle:nil];
         UIViewController *graphVC = [graphSB instantiateViewControllerWithIdentifier:@"GraphIphoneViewController"];
         
+        // Move around the graph view
+//        [graphVC.view setFrame:CGRectMake(384.0f, 0.0f, 375.0f, 700.0f)];
+        
         NSArray *newVCs = [NSArray arrayWithObjects:graphVC, inputVC, nil];
         
         splitty.viewControllers = newVCs;
+        [splitty showDetailViewController:graphVC sender:nil];
         
         [self presentViewController:splitty animated:NO completion:NULL];
     }

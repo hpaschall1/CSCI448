@@ -32,7 +32,10 @@
 	// Changed this from awakeFromNib - we aren't using a nib
 
 	self.splitViewController.delegate = self;
-	self.splitViewController.presentsWithGesture = NO;	
+	self.splitViewController.presentsWithGesture = NO;
+    
+    // Show the actual graph
+    NSLog(@"Showing the view...");
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation {
@@ -122,6 +125,10 @@
 	// We want to update the graphView to set the starting values for the program. In iPad mode 
 	// this method is called before a program is set, in which case we don't want to do anything
 	[self refreshView];
+}
+
+- (void)sendProgram:(NSString *)program {
+    _program = program;
 }
 
 - (IBAction)drawModeSwitched:(id)sender {

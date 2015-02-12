@@ -7,6 +7,7 @@
 //
 
 #import "InputIphoneViewController.h"
+#import "GraphViewController.h"
 #import "CalculatorBrain.h"
 
 @interface InputIphoneViewController ()
@@ -140,10 +141,11 @@
 }
 
 - (IBAction)graphPushed {
-    NSLog(@"We should segue to a thingy");
     
     UIStoryboard *graphSB = [UIStoryboard storyboardWithName:@"GraphIphoneView" bundle:nil];
-    UIViewController *graphVC = [graphSB instantiateViewControllerWithIdentifier:@"GraphIphoneViewController"];
+    GraphViewController *graphVC = [graphSB instantiateViewControllerWithIdentifier:@"GraphIphoneViewController"];
+    
+    [graphVC sendProgram:self.verboseDisplay.text];
     
     [self presentViewController:graphVC animated:YES completion:nil];
     

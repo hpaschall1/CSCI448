@@ -13,6 +13,7 @@
 @property (nonatomic, strong) id program;
 
 - (void)refreshView;
+- (void)sendProgram:(NSString*) program;
 
 @property (weak, nonatomic) IBOutlet UIButton *backButton;
 

@@ -15,7 +15,24 @@
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    // Load up the detail and master view controllers
+    UIStoryboard *inputSB = [UIStoryboard storyboardWithName:@"InputIphoneView" bundle:nil];
+    UIViewController *inputVC = [inputSB instantiateViewControllerWithIdentifier:@"InputIphoneViewController"];
+    
+    UIStoryboard *graphSB = [UIStoryboard storyboardWithName:@"GraphIphoneView" bundle:nil];
+    UIViewController *graphVC = [graphSB instantiateViewControllerWithIdentifier:@"GraphIphoneViewController"];
+    
+    NSArray *newVCs = [NSArray arrayWithObjects:graphVC, inputVC, nil];
+    
+    if([[UIDevice currentDevice]userInterfaceIdiom]==UIUserInterfaceIdiomPhone){
+       newVCs = [NSArray arrayWithObjects:inputVC, graphVC, nil];
+    }
+    
+    UISplitViewController *splitty = (UISplitViewController*)self.window.rootViewController;
+    
+    splitty.viewControllers = newVCs;
+    
     return YES;
 }
 

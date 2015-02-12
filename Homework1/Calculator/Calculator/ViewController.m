@@ -13,43 +13,8 @@
 
 @implementation ViewController
 
--(void)viewDidAppear:(BOOL)animated {
-    // Main storyboard is a dummy so we can load it then switch to the device appropriate view controller
-    // This is because the project statement does not specify exactly how this was to be done.
+-(void)viewDidLoad {
     
-    // Buffer view to create and switch to other views depending on device
-    if([[UIDevice currentDevice]userInterfaceIdiom]==UIUserInterfaceIdiomPhone){
-        
-        // Get the storyboard by name
-        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"InputIphoneView" bundle:nil];
-        
-        // Link it to the viewcontroller called "InputIphoneViewController"
-        UIViewController *viewcontroller = [storyboard instantiateViewControllerWithIdentifier:@"InputIphoneViewController"];
-        
-        // If you've got it, flaunt it
-        [self presentViewController:viewcontroller animated:NO completion:NULL];
-    } else {
-        
-        // This one doesn't have a storyboard
-        UISplitViewController *splitty = [[UISplitViewController alloc] init];
-        
-        // Load up the detail and master view controllers
-        UIStoryboard *inputSB = [UIStoryboard storyboardWithName:@"InputIphoneView" bundle:nil];
-        UIViewController *inputVC = [inputSB instantiateViewControllerWithIdentifier:@"InputIphoneViewController"];
-        
-        UIStoryboard *graphSB = [UIStoryboard storyboardWithName:@"GraphIphoneView" bundle:nil];
-        UIViewController *graphVC = [graphSB instantiateViewControllerWithIdentifier:@"GraphIphoneViewController"];
-        
-        // Move around the graph view
-//        [graphVC.view setFrame:CGRectMake(384.0f, 0.0f, 375.0f, 700.0f)];
-        
-        NSArray *newVCs = [NSArray arrayWithObjects:graphVC, inputVC, nil];
-        
-        splitty.viewControllers = newVCs;
-        [splitty showDetailViewController:graphVC sender:nil];
-        
-        [self presentViewController:splitty animated:NO completion:NULL];
-    }
 }
 
 @end

@@ -10,7 +10,7 @@
 
 @interface GraphViewController : UIViewController <UISplitViewControllerDelegate>
 
-@property (nonatomic, strong) id program;
+@property (nonatomic, strong) NSString* program;
 
 - (void)refreshView;
 - (void)sendProgram:(NSString*) program;

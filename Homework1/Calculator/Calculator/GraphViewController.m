@@ -34,8 +34,25 @@
 	self.splitViewController.delegate = self;
 	self.splitViewController.presentsWithGesture = NO;
     
-    // Show the actual graph
-    NSLog(@"Showing the view...");
+    // run the program
+    if([_program isEqualToString:@""] == NO){
+        
+        // Math
+        
+        // Incorrect usage of NSUserDefaults in iOS 8... But not like that matters to Aarti.
+        // Retrieve the scale from storage
+        float scale = [[NSUserDefaults standardUserDefaults]
+                       floatForKey:@"scale"];
+        
+        // Retrieve the x axis origin from storage
+        float xAxisOrigin = [[NSUserDefaults standardUserDefaults]
+                             floatForKey:@"x"];
+        
+        
+        
+        [CalculatorBrain runProgram:_program usingVariableValues:nil /* Something */];
+        
+    }
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation {
@@ -57,20 +74,21 @@
 	
 	// Need a graph view to set initial scale and axis origin
 	if (! self.graphView) return;
-	
-	NSString *program = [CalculatorBrain descriptionOfProgram:self.program];
+
+    // Useless and Doesn't match project requirements
+//	NSString *program = [CalculatorBrain descriptionOfProgram:self.program];
 	
 	// Retrieve the scale from storage
-	float scale = [[NSUserDefaults standardUserDefaults] 
-						floatForKey:[@"scale." stringByAppendingString:program]];	
+	float scale = [[NSUserDefaults standardUserDefaults]
+						floatForKey:@"scale"];
 	
 	// Retrieve the x axis origin from storage
 	float xAxisOrigin = [[NSUserDefaults standardUserDefaults] 
-								floatForKey:[@"x." stringByAppendingString:program]];
+								floatForKey:@"x"];
 	
 	// Retrieve the y axis origin from storage
 	float yAxisOrigin = [[NSUserDefaults standardUserDefaults]
-								floatForKey:[@"y." stringByAppendingString:program]];
+								floatForKey:@"y"];
 	
 	// If we have scale in storage, then set this as the scale for the graph view
 	if (scale) self.graphView.scale = scale;

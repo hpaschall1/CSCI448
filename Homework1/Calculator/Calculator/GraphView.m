@@ -142,7 +142,7 @@
 		 (gesture.state == UIGestureRecognizerStateEnded)) {
 		
 
-		// Todo: Move the origin of the graph
+		// TODO: Move the origin of the graph
 					
 	}
 }

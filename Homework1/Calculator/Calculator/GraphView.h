@@ -20,7 +20,9 @@
 
 @interface GraphView : UIView
 
+// No idea why this exists, or where the fuck it's supposed to be hooked up
 @property(nonatomic, weak) IBOutlet id <GraphViewDataSource> dataSource;
+
 @property(nonatomic) CGFloat scale;
 @property(nonatomic) CGPoint axisOrigin;
 

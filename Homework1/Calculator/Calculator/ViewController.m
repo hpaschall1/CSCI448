@@ -17,4 +17,12 @@
     
 }
 
+-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if([segue.identifier isEqualToString:@"InputIphoneViewController"]){
+        NSLog(@"We need to go to the graph");
+    } else {
+        NSLog(@"We need to go to the input");
+    }
+}
+
 @end

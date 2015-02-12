@@ -30,17 +30,7 @@
 
 - (void)viewDidAppear:(BOOL)animated {
 	// Changed this from awakeFromNib - we aren't using a nib
-    
-    BOOL using_iphone = [[UIDevice currentDevice]userInterfaceIdiom] == UIUserInterfaceIdiomPhone;
-    
-    // If we aren't an iphone, hide the back button
-    self.backButton.hidden = ! using_iphone;
-    
-    if(!using_iphone){
-        NSLog(@"SHIT SHIT SHIT!");
-    }
-    
-    
+
 	self.splitViewController.delegate = self;
 	self.splitViewController.presentsWithGesture = NO;	
 }
@@ -55,41 +45,6 @@
 	
 	// Hide the the master controller in portrait mode
 	return UIInterfaceOrientationIsPortrait(orientation);
-}
-
-- (void)splitViewController:(UISplitViewController *)svc 
-	  willHideViewController:(UIViewController *)aViewController 
-			 withBarButtonItem:(UIBarButtonItem *)barButtonItem 
-		 forPopoverController:(UIPopoverController *)pc {
-	
-	// Show the bar button item on the toolbar
-	barButtonItem.title = aViewController.title;
-	
-	//self.popover = [[UIPopoverController alloc] initWithContentViewController:aViewController];
-	
-	barButtonItem.target = self;
-	barButtonItem.action = @selector(barButtonPressed:);
-	
-	// Add the button to the toolbar
-	
-	
-}
-
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    
-    //TODO: write code to segue to the graphview and set delegate
-    
-	
-}
-
-- (void) splitViewController:(UISplitViewController *)svc 
-		willShowViewController:(UIViewController *)aViewController 
-	invalidatingBarButtonItem:(UIBarButtonItem *)barButtonItem {
-	
-	// Hide the bar button item on the detail controller
-	
-	
 }
 
 - (void)refreshView {

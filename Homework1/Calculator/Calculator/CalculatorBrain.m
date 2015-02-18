@@ -80,7 +80,7 @@
 #pragma mark - Class Methods
 
 + (NSString*)descriptionOfProgram:(id) program{
-    // This ended up being unecessary
+    // This ended up being unecessary...
     return @"";
 }
 
@@ -93,7 +93,7 @@
     for(NSNumber *n in arr){
         float n_val = [n floatValue];
         
-        NSLog(@"IT's working %@!", n);
+        NSLog(@"It's working %f!", n_val);
     }
     
     return final;

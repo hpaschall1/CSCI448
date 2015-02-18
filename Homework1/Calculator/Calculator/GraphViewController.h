@@ -15,6 +15,7 @@
 - (void)refreshView;
 - (void)sendProgram:(NSString*) program;
 
+@property (weak, nonatomic) IBOutlet UILabel *description;
 @property (weak, nonatomic) IBOutlet UIButton *backButton;
 
 @end

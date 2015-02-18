@@ -15,6 +15,6 @@
 - (double)performOperation:(NSString *)operation;
 
 + (NSString*)descriptionOfProgram:(id) program;
-+ (float)runProgram:(id) program usingVariableValues:(NSDictionary*) dict;
++ (NSMutableArray*)runProgram:(id) program usingVariableValues:(NSMutableArray*) arr;
 
 @end

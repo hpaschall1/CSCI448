@@ -84,9 +84,19 @@
     return @"";
 }
 
-+ (float)runProgram:(id) program usingVariableValues:(NSDictionary*) dict{
-#warning Implement me
-    return 0.0f;
++ (NSMutableArray*)runProgram:(id) program usingVariableValues:(NSMutableArray*) arr{
+    // Why the fuck does this return a float?!?!? Shouldn't it return the series of Y's for each X?
+    // That's what I've decided it does. Bam. Executive decision.
+    
+    NSMutableArray* final = [[NSMutableArray alloc] init];
+    
+    for(NSNumber *n in arr){
+        float n_val = [n floatValue];
+        
+        NSLog(@"IT's working %@!", n);
+    }
+    
+    return final;
 }
 
 @end

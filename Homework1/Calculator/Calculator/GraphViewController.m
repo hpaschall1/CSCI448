@@ -34,40 +34,8 @@
 	self.splitViewController.delegate = self;
 	self.splitViewController.presentsWithGesture = NO;
     
-    // run the program
-    if([_program isEqualToString:@""] == NO){
-        
-        // Math
-        
-        // Incorrect usage of NSUserDefaults in iOS 8... But not like that matters to Aarti.
-        // Retrieve the scale from storage
-        float scale = [[NSUserDefaults standardUserDefaults]
-                       floatForKey:@"scale"];
-        
-        // Retrieve the x axis origin from storage
-        float xAxisOrigin = [[NSUserDefaults standardUserDefaults]
-                             floatForKey:@"x"];
-        
-        float lower_bound = -1.0f * xAxisOrigin * scale;
-        float upper_bound =  xAxisOrigin * scale;
-        
-        float distance = upper_bound - lower_bound;
-        
-        // We needed a dictionary for this? This should definitely be an array
-        NSMutableDictionary* dict = [[NSMutableDictionary alloc] init];
-        
-        int frame_size = self.view.frame.size.width;
-        
-        for(int i = 0; i < frame_size; ++i){
-            
-            CGFloat value = lower_bound + (float)i / (float)frame_size * distance;
-            
-            [dict setObject:[NSNumber numberWithFloat:value] forKey:[NSNumber numberWithInt:i]];
-        }
-        
-        [CalculatorBrain runProgram:_program usingVariableValues:dict];
-        
-    }
+
+    [self refreshView];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation {
@@ -90,7 +58,7 @@
 	// Need a graph view to set initial scale and axis origin
 	if (! self.graphView) return;
 
-    // Useless and Doesn't match project requirements
+// Useless and Doesn't match project requirements
 //	NSString *program = [CalculatorBrain descriptionOfProgram:self.program];
 	
 	// Retrieve the scale from storage
@@ -118,6 +86,42 @@
 		
 		self.graphView.axisOrigin = axisOrigin;
 	}
+    
+    // run the program
+    if([_program isEqualToString:@""] == NO){
+        
+        // Math
+        
+        // Incorrect usage of NSUserDefaults in iOS 8... But not like that matters to Aarti.
+        // Retrieve the scale from storage
+        float scale = [[NSUserDefaults standardUserDefaults]
+                       floatForKey:@"scale"];
+        
+        // Retrieve the x axis origin from storage
+        float xAxisOrigin = [[NSUserDefaults standardUserDefaults]
+                             floatForKey:@"x"];
+        
+        // No idea how the axes are setup
+        float lower_bound = -1.0f * xAxisOrigin * scale;
+        float upper_bound =  xAxisOrigin * scale;
+        
+        float distance = upper_bound - lower_bound;
+        
+        // Changed the dictionary to an array
+        NSMutableArray* arr = [[NSMutableArray alloc] init];
+        
+        int frame_size = self.view.frame.size.width;
+        
+        for(int i = 0; i < frame_size; ++i){
+            
+            CGFloat value = lower_bound + (float)i / (float)frame_size * distance;
+            
+            [arr addObject:[NSNumber numberWithFloat:value]];
+        }
+        
+        NSMutableArray* values_to_graph = [CalculatorBrain runProgram:_program usingVariableValues:arr];
+        
+    }
 	
 	// Refresh the graph View
 	[self.graphView setNeedsDisplay];
@@ -196,17 +200,6 @@
 	[[NSUserDefaults standardUserDefaults] synchronize];
 	
 }
-
-- (float)YValueForXValue:(float)xValue inGraphView:(GraphView *)sender {
-	
-	// Find the corresponding Y value by passing the x value to the calculator Brain
-	float yValue = [CalculatorBrain runProgram:self.program usingVariableValues:
-					 [NSDictionary dictionaryWithObject:[NSNumber numberWithFloat:xValue] 
-														  forKey:@"x"]];
-	
-	return yValue;
-}
-
 
 - (void)viewDidUnload {
 	

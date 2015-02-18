@@ -48,9 +48,24 @@
         float xAxisOrigin = [[NSUserDefaults standardUserDefaults]
                              floatForKey:@"x"];
         
+        float lower_bound = -1.0f * xAxisOrigin * scale;
+        float upper_bound =  xAxisOrigin * scale;
         
+        float distance = upper_bound - lower_bound;
         
-        [CalculatorBrain runProgram:_program usingVariableValues:nil /* Something */];
+        // We needed a dictionary for this? This should definitely be an array
+        NSMutableDictionary* dict = [[NSMutableDictionary alloc] init];
+        
+        int frame_size = self.view.frame.size.width;
+        
+        for(int i = 0; i < frame_size; ++i){
+            
+            CGFloat value = lower_bound + (float)i / (float)frame_size * distance;
+            
+            [dict setObject:[NSNumber numberWithFloat:value] forKey:[NSNumber numberWithInt:i]];
+        }
+        
+        [CalculatorBrain runProgram:_program usingVariableValues:dict];
         
     }
 }

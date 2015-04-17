@@ -11,17 +11,20 @@
 int snakeX;
 int snakeY;
 
+int snakeLength;
+
 bool gameHasStarted;
 
 @interface Game : UIViewController
 {
-    IBOutlet UIImageView *snakeBlock1;
     IBOutlet UIButton *upButton;
     IBOutlet UIButton *downButton;
     IBOutlet UIButton *rightButton;
     IBOutlet UIButton *leftButton;
     
     UIButton *lastButtonPressed;
+    
+    IBOutlet UIImageView *foodPellet;
     
     NSTimer *snakeMovementTimer;
 }

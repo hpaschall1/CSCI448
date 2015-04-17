@@ -59,10 +59,6 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="0.42244037829999997" alpha="1" colorSpace="calibratedWhite"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GZb-tC-gD2">
-                                <rect key="frame" x="50" y="50" width="80" height="80"/>
-                                <color key="backgroundColor" white="0.87034847861842102" alpha="1" colorSpace="calibratedWhite"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MRN-o3-tfR">
                                 <rect key="frame" x="147" y="380" width="80" height="80"/>
                                 <color key="backgroundColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -95,17 +91,25 @@
                                     <action selector="DirectionalButtonPressed:" destination="ufD-wa-fgt" eventType="touchUpInside" id="rAF-3c-gIN"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aQw-pj-MzK">
+                                <rect key="frame" x="-15" y="0.0" width="15" height="15"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.42244037828947373" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="J7u-Lo-bpy"/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
                     <connections>
                         <outlet property="downButton" destination="aZB-Ne-1f5" id="UeZ-Qj-qnK"/>
+                        <outlet property="foodPellet" destination="aQw-pj-MzK" id="8E8-A4-H52"/>
                         <outlet property="leftButton" destination="UIr-wA-bNN" id="oUV-LB-0UX"/>
                         <outlet property="rightButton" destination="yej-fo-mke" id="YPD-El-pmV"/>
-                        <outlet property="snakeBlock1" destination="GZb-tC-gD2" id="BUl-cY-KLj"/>
                         <outlet property="upButton" destination="MRN-o3-tfR" id="fIV-ab-g8d"/>
                     </connections>
                 </viewController>

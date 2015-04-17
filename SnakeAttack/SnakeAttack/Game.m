@@ -48,8 +48,9 @@ const int START_Y = 195;
     // Randomly place a food
     int randX = arc4random() % 23;
     int randY = arc4random() % 23;
+    foodPellet.frame = CGRectMake(randX * MOVE_DISTANCE + MOVE_DISTANCE, randY * MOVE_DISTANCE + MOVE_DISTANCE, MOVE_DISTANCE, MOVE_DISTANCE);
     
-    foodPellet.frame = CGRectMake(randX*MOVE_DISTANCE + MOVE_DISTANCE, randY*MOVE_DISTANCE + MOVE_DISTANCE, MOVE_DISTANCE, MOVE_DISTANCE);
+    NSLog(@"Food moved to %d, %d", randX * MOVE_DISTANCE + MOVE_DISTANCE, randY * MOVE_DISTANCE + MOVE_DISTANCE);
 }
 
 -(BOOL)prefersStatusBarHidden{
@@ -103,7 +104,7 @@ const int START_Y = 195;
         
         gameHasStarted = YES;
         
-        snakeMovementTimer = [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(SnakeMoving) userInfo:nil repeats:YES];
+        snakeMovementTimer = [NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector:@selector(SnakeMoving) userInfo:nil repeats:YES];
         
         
     } else {

@@ -69,29 +69,36 @@ const int START_Y = 195;
     }
     
     // Take the last place sprite in snakeBody and put it at the new front unless we ate a food.
-//    head.center = CGPointMake(head.center.x + snakeX, head.center.y + snakeY);
+    UIImageView *newHead;
+    
     if([_snakeBody count] < snakeLength){
         // Create a new head, place it at the front
-        UIImageView *newHead = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, MOVE_DISTANCE, MOVE_DISTANCE)];
+        newHead = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, MOVE_DISTANCE, MOVE_DISTANCE)];
         newHead.center = CGPointMake(oldHead.center.x + snakeX, oldHead.center.y + snakeY);
         newHead.backgroundColor = [UIColor redColor];
         [_snakeBody insertObject:newHead atIndex:0];
         [self.view addSubview:newHead];
     } else {
         // Put the tail at the new head
-        UIImageView *newHead;
         newHead = [_snakeBody lastObject];
         [_snakeBody removeLastObject];
         newHead.center = CGPointMake(oldHead.center.x + snakeX, oldHead.center.y + snakeY);
         [_snakeBody insertObject:newHead atIndex:0];
     }
 
-    
     // See if we ran into a wall, game over
+    if(newHead.center.x < 15 || newHead.center.y < 15 || newHead.center.x > 360 || newHead.center.y > 360){
+        [self gameOver];
+    }
     
     // Run throught the entire thing, changing sprites and detecting collisions
-    
-    // Loss checking goes here probably
+    if([self isThereACollision] == NO){
+        // Fix the sprites
+    }
+}
+
+-(BOOL)isThereACollision{
+    return NO;
 }
 
 -(void)gameOver{
@@ -104,7 +111,7 @@ const int START_Y = 195;
         
         gameHasStarted = YES;
         
-        snakeMovementTimer = [NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector:@selector(SnakeMoving) userInfo:nil repeats:YES];
+        snakeMovementTimer = [NSTimer scheduledTimerWithTimeInterval:0.3 target:self selector:@selector(SnakeMoving) userInfo:nil repeats:YES];
         
         
     } else {

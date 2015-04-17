@@ -21,6 +21,8 @@ bool gameHasStarted;
     IBOutlet UIButton *rightButton;
     IBOutlet UIButton *leftButton;
     
+    UIButton *lastButtonPressed;
+    
     NSTimer *snakeMovementTimer;
 }
 

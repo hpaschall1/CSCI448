@@ -16,12 +16,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    snakeX = 10;
+    snakeY = 0;
+    
+    lastButtonPressed = nil;
 }
 
 -(void)SnakeMoving
 {
+    snakeBlock1.center = CGPointMake(snakeBlock1.center.x + snakeX, snakeBlock1.center.y + snakeY);
     
+    // Loss checking goes here probably
 }
 
 -(IBAction)DirectionalButtonPressed:(id)sender
@@ -34,8 +40,31 @@
         
         
     } else {
-        // Treat the buttons like directional buttons
+        
+        if((sender == upButton && lastButtonPressed == downButton)
+           || (sender == downButton && lastButtonPressed == upButton)
+           || (sender == leftButton && lastButtonPressed == rightButton)
+           || (sender == rightButton && lastButtonPressed == leftButton)){
+            return;
+        }
+        
+        
+        if(sender == upButton){
+            snakeX = 0;
+            snakeY = -10;
+        } else if(sender == downButton){
+            snakeX = 0;
+            snakeY = 10;
+        } else if (sender == rightButton){
+            snakeX = 10;
+            snakeY = 0;
+        } else if (sender == leftButton){
+            snakeX = -10;
+            snakeY = 0;
+        }
     }
+        
+    lastButtonPressed = sender;
 }
 
 @end

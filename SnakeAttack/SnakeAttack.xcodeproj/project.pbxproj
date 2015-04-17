@@ -14,6 +14,7 @@
 		265D282E1AE09E8F00E22105 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 265D282D1AE09E8F00E22105 /* Images.xcassets */; };
 		265D28311AE09E8F00E22105 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 265D282F1AE09E8F00E22105 /* LaunchScreen.xib */; };
 		265D283D1AE09E8F00E22105 /* SnakeAttackTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 265D283C1AE09E8F00E22105 /* SnakeAttackTests.m */; };
+		265D28481AE0A3B600E22105 /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 265D28471AE0A3B600E22105 /* Game.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,8 @@
 		265D28361AE09E8F00E22105 /* SnakeAttackTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SnakeAttackTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		265D283B1AE09E8F00E22105 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		265D283C1AE09E8F00E22105 /* SnakeAttackTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SnakeAttackTests.m; sourceTree = "<group>"; };
+		265D28461AE0A3B600E22105 /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
+		265D28471AE0A3B600E22105 /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Game.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +89,8 @@
 				265D28271AE09E8F00E22105 /* ViewController.h */,
 				265D28281AE09E8F00E22105 /* ViewController.m */,
 				265D282A1AE09E8F00E22105 /* Main.storyboard */,
+				265D28461AE0A3B600E22105 /* Game.h */,
+				265D28471AE0A3B600E22105 /* Game.m */,
 				265D282D1AE09E8F00E22105 /* Images.xcassets */,
 				265D282F1AE09E8F00E22105 /* LaunchScreen.xib */,
 				265D28201AE09E8F00E22105 /* Supporting Files */,
@@ -222,6 +227,7 @@
 				265D28291AE09E8F00E22105 /* ViewController.m in Sources */,
 				265D28261AE09E8F00E22105 /* AppDelegate.m in Sources */,
 				265D28231AE09E8F00E22105 /* main.m in Sources */,
+				265D28481AE0A3B600E22105 /* Game.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

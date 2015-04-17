@@ -43,10 +43,10 @@
             </objects>
             <point key="canvasLocation" x="-356.5" y="192.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Game-->
         <scene sceneID="cHV-ux-0KF">
             <objects>
-                <viewController id="ufD-wa-fgt" sceneMemberID="viewController">
+                <viewController id="ufD-wa-fgt" customClass="Game" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Vyv-Q3-OBA"/>
                         <viewControllerLayoutGuide type="bottom" id="ke4-ng-wPU"/>
@@ -67,21 +67,33 @@
                                 <rect key="frame" x="147" y="380" width="80" height="80"/>
                                 <color key="backgroundColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <state key="normal" title="UP"/>
+                                <connections>
+                                    <action selector="DirectionalButtonPressed:" destination="ufD-wa-fgt" eventType="touchUpInside" id="euO-oc-ByE"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aZB-Ne-1f5">
                                 <rect key="frame" x="147" y="540" width="80" height="80"/>
                                 <color key="backgroundColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <state key="normal" title="DOWN"/>
+                                <connections>
+                                    <action selector="DirectionalButtonPressed:" destination="ufD-wa-fgt" eventType="touchUpInside" id="qqS-uo-bFy"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yej-fo-mke">
                                 <rect key="frame" x="227" y="460" width="80" height="80"/>
                                 <color key="backgroundColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <state key="normal" title="RIGHT"/>
+                                <connections>
+                                    <action selector="DirectionalButtonPressed:" destination="ufD-wa-fgt" eventType="touchUpInside" id="as9-lZ-8OT"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UIr-wA-bNN">
                                 <rect key="frame" x="67" y="460" width="80" height="80"/>
                                 <color key="backgroundColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <state key="normal" title="LEFT"/>
+                                <connections>
+                                    <action selector="DirectionalButtonPressed:" destination="ufD-wa-fgt" eventType="touchUpInside" id="rAF-3c-gIN"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.42244037828947373" alpha="1" colorSpace="calibratedWhite"/>
@@ -89,6 +101,13 @@
                     <navigationItem key="navigationItem" id="J7u-Lo-bpy"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
+                    <connections>
+                        <outlet property="downButton" destination="aZB-Ne-1f5" id="UeZ-Qj-qnK"/>
+                        <outlet property="leftButton" destination="UIr-wA-bNN" id="oUV-LB-0UX"/>
+                        <outlet property="rightButton" destination="yej-fo-mke" id="YPD-El-pmV"/>
+                        <outlet property="snakeBlock1" destination="GZb-tC-gD2" id="BUl-cY-KLj"/>
+                        <outlet property="upButton" destination="MRN-o3-tfR" id="fIV-ab-g8d"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TQl-Kz-kJV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

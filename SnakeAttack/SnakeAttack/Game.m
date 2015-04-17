@@ -22,7 +22,9 @@ const int START_Y = 195;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+}
+
+-(void)setupGame{
     snakeX = MOVE_DISTANCE;
     snakeY = 0;
     
@@ -34,7 +36,6 @@ const int START_Y = 195;
     gameHasEnded = NO;
     
     snakeMovementTimer = nil;
-    _snakeBody = nil;
     
     // Create the 5 starting blocks
     _snakeBody = [[NSMutableArray alloc] init];
@@ -49,6 +50,8 @@ const int START_Y = 195;
 }
 
 -(void)viewDidAppear:(BOOL)animated{
+    [self setupGame];
+    
     [self placeFoodRandomly];
 }
 
@@ -57,8 +60,6 @@ const int START_Y = 195;
     int randX = arc4random() % 23;
     int randY = arc4random() % 23;
     foodPellet.frame = CGRectMake(randX * MOVE_DISTANCE + MOVE_DISTANCE, randY * MOVE_DISTANCE + MOVE_DISTANCE, MOVE_DISTANCE, MOVE_DISTANCE);
-    
-    NSLog(@"Food moved to %d, %d", randX * MOVE_DISTANCE + MOVE_DISTANCE, randY * MOVE_DISTANCE + MOVE_DISTANCE);
 }
 
 -(BOOL)prefersStatusBarHidden{
@@ -67,7 +68,7 @@ const int START_Y = 195;
 
 -(void)SnakeMoving
 {
-    if(gameHasEnded){
+    if(gameHasEnded || [_snakeBody count] == 0){
         return;
     }
     
@@ -129,12 +130,16 @@ const int START_Y = 195;
 
 -(void)gameOver{
     gameHasEnded = YES;
+    snakeMovementTimer = nil;
     
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"You've lost!" message:[NSString stringWithFormat:@"You collected %d pellets of food!", foodCollected] delegate:self cancelButtonTitle:@"Play Again" otherButtonTitles:nil, nil];
     [alert show];
 }
 
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    
+    [_snakeBody removeAllObjects];
+    
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

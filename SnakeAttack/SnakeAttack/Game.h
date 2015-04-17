@@ -11,11 +11,14 @@
 int snakeX;
 int snakeY;
 
+int foodCollected;
+
 int snakeLength;
 
 bool gameHasStarted;
+bool gameHasEnded;
 
-@interface Game : UIViewController
+@interface Game : UIViewController <UIAlertViewDelegate>
 {
     IBOutlet UIButton *upButton;
     IBOutlet UIButton *downButton;

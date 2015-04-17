@@ -26,7 +26,15 @@ const int START_Y = 195;
     snakeX = MOVE_DISTANCE;
     snakeY = 0;
     
+    foodCollected = 0;
+    
     lastButtonPressed = nil;
+    
+    gameHasStarted = NO;
+    gameHasEnded = NO;
+    
+    snakeMovementTimer = nil;
+    _snakeBody = nil;
     
     // Create the 5 starting blocks
     _snakeBody = [[NSMutableArray alloc] init];
@@ -59,12 +67,16 @@ const int START_Y = 195;
 
 -(void)SnakeMoving
 {
+    if(gameHasEnded){
+        return;
+    }
     
     UIImageView *oldHead = (UIImageView*)[_snakeBody objectAtIndex:0];
     
     // See if we ran into a food. If so, add 3 to length and randomly place a new one
     if(CGPointEqualToPoint(oldHead.center, foodPellet.center)){
         snakeLength += 3;
+        foodCollected++;
         [self placeFoodRandomly];
     }
     
@@ -91,18 +103,39 @@ const int START_Y = 195;
         [self gameOver];
     }
     
-    // Run throught the entire thing, changing sprites and detecting collisions
+    // Run through the entire thing, changing sprites and detecting collisions
     if([self isThereACollision] == NO){
         // Fix the sprites
+    } else {
+        [self gameOver];
     }
 }
 
 -(BOOL)isThereACollision{
+    for(int i=0; i < [_snakeBody count]; ++i){
+        for(int j=0; j < [_snakeBody count]; ++j){
+            
+            UIImageView *one = (UIImageView*)[_snakeBody objectAtIndex:i];
+            UIImageView *two = (UIImageView*)[_snakeBody objectAtIndex:j];
+            
+            if(CGPointEqualToPoint(one.center, two.center) && i != j){
+                return YES;
+            }
+        }
+    }
+    
     return NO;
 }
 
 -(void)gameOver{
-    NSLog(@"GAME OVER...");
+    gameHasEnded = YES;
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"You've lost!" message:[NSString stringWithFormat:@"You collected %d pellets of food!", foodCollected] delegate:self cancelButtonTitle:@"Play Again" otherButtonTitles:nil, nil];
+    [alert show];
+}
+
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 -(IBAction)DirectionalButtonPressed:(id)sender

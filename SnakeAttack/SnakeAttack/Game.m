@@ -18,7 +18,7 @@ const int START_Y = 195;
 
 @implementation Game
 
-@synthesize snakeBody;
+@synthesize snakeBody = _snakeBody;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -26,17 +26,16 @@ const int START_Y = 195;
     snakeX = MOVE_DISTANCE;
     snakeY = 0;
     
-    snakeLength = 5;
-    
     lastButtonPressed = nil;
     
     // Create the 5 starting blocks
-    snakeBody = [[NSMutableArray alloc] init];
+    _snakeBody = [[NSMutableArray alloc] init];
+    snakeLength = 5;
     
     for(int i=0; i < snakeLength; ++i){
-        UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(START_X - (i*MOVE_DISTANCE), START_Y, MOVE_DISTANCE, MOVE_DISTANCE)];
+        UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(START_X - (i * MOVE_DISTANCE), START_Y, MOVE_DISTANCE, MOVE_DISTANCE)];
         imageView.backgroundColor = [UIColor redColor];
-        [snakeBody addObject:[[UIImageView alloc] init]];
+        [_snakeBody addObject:imageView];
         [self.view addSubview:imageView];
     }
 }
@@ -59,15 +58,43 @@ const int START_Y = 195;
 
 -(void)SnakeMoving
 {
-    // See if we ran into a food. If so, add 3 to length and randomly place a new one
     
-    // Take the last place sprite in snakeBody and put it at the new front unless we ate a food. Then we count to three steps and make a new sprite for each step
+    UIImageView *oldHead = (UIImageView*)[_snakeBody objectAtIndex:0];
+    
+    // See if we ran into a food. If so, add 3 to length and randomly place a new one
+    if(CGPointEqualToPoint(oldHead.center, foodPellet.center)){
+        snakeLength += 3;
+        [self placeFoodRandomly];
+    }
+    
+    // Take the last place sprite in snakeBody and put it at the new front unless we ate a food.
+//    head.center = CGPointMake(head.center.x + snakeX, head.center.y + snakeY);
+    if([_snakeBody count] < snakeLength){
+        // Create a new head, place it at the front
+        UIImageView *newHead = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, MOVE_DISTANCE, MOVE_DISTANCE)];
+        newHead.center = CGPointMake(oldHead.center.x + snakeX, oldHead.center.y + snakeY);
+        newHead.backgroundColor = [UIColor redColor];
+        [_snakeBody insertObject:newHead atIndex:0];
+        [self.view addSubview:newHead];
+    } else {
+        // Put the tail at the new head
+        UIImageView *newHead;
+        newHead = [_snakeBody lastObject];
+        [_snakeBody removeLastObject];
+        newHead.center = CGPointMake(oldHead.center.x + snakeX, oldHead.center.y + snakeY);
+        [_snakeBody insertObject:newHead atIndex:0];
+    }
+
     
     // See if we ran into a wall, game over
     
     // Run throught the entire thing, changing sprites and detecting collisions
     
     // Loss checking goes here probably
+}
+
+-(void)gameOver{
+    NSLog(@"GAME OVER...");
 }
 
 -(IBAction)DirectionalButtonPressed:(id)sender

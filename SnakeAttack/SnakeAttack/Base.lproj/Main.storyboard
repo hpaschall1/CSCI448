@@ -46,7 +46,7 @@
         <!--Game-->
         <scene sceneID="cHV-ux-0KF">
             <objects>
-                <viewController id="ufD-wa-fgt" customClass="Game" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="crossDissolve" id="ufD-wa-fgt" customClass="Game" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Vyv-Q3-OBA"/>
                         <viewControllerLayoutGuide type="bottom" id="ke4-ng-wPU"/>

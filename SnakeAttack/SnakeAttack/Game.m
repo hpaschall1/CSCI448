@@ -43,7 +43,7 @@ const int START_Y = 185;
     
     for(int i=0; i < snakeLength; ++i){
         UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(START_X - (i * MOVE_DISTANCE), START_Y, MOVE_DISTANCE, MOVE_DISTANCE)];
-        imageView.backgroundColor = [UIColor redColor];
+        imageView.backgroundColor = [UIColor clearColor];
         [_snakeBody addObject:imageView];
         [self.view addSubview:imageView];
     }
@@ -51,7 +51,7 @@ const int START_Y = 185;
 
 -(void)viewDidAppear:(BOOL)animated{
     [self setupGame];
-    
+    [self fixSnakeBodySprites];
     [self placeFoodRandomly];
 }
 
@@ -88,7 +88,7 @@ const int START_Y = 185;
         // Create a new head, place it at the front
         newHead = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, MOVE_DISTANCE, MOVE_DISTANCE)];
         newHead.center = CGPointMake(oldHead.center.x + snakeX, oldHead.center.y + snakeY);
-        newHead.backgroundColor = [UIColor redColor];
+        newHead.backgroundColor = [UIColor clearColor];
         [_snakeBody insertObject:newHead atIndex:0];
         [self.view addSubview:newHead];
     } else {
@@ -115,7 +115,59 @@ const int START_Y = 185;
 
 -(void)fixSnakeBodySprites{
     // First, get the head pointing the right way
+    UIImageView *snakeHead = (UIImageView*)[_snakeBody objectAtIndex:0];
     
+    if(lastButtonPressed == upButton){
+        [snakeHead setImage:[UIImage imageNamed:@"snake_head_up.png"]];
+    } else if (lastButtonPressed == downButton){
+        [snakeHead setImage:[UIImage imageNamed:@"snake_head_down.png"]];
+    } else if (lastButtonPressed == leftButton){
+        [snakeHead setImage:[UIImage imageNamed:@"snake_head_left.png"]];
+    } else if (lastButtonPressed == rightButton){
+        [snakeHead setImage:[UIImage imageNamed:@"snake_head_right.png"]];
+    }
+    
+    UIImageView *previous;
+    UIImageView *current;
+    UIImageView *next;
+    
+    
+    // Next, get the body sprites all set up
+    for(int i = 1; i < [_snakeBody count] - 1; ++i){
+        previous = [_snakeBody objectAtIndex:i-1];
+        current = [_snakeBody objectAtIndex:i];
+        next = [_snakeBody objectAtIndex:i+1];
+        
+        if(previous.center.y == current.center.y && current.center.y == next.center.y){
+            [current setImage:[UIImage imageNamed:@"snake_body_horizontal.png"]];
+        } else if (previous.center.x == current.center.x && current.center.x == next.center.x){
+            [current setImage:[UIImage imageNamed:@"snake_body_vertical.png"]];
+        } else {
+            if((previous.center.x < current.center.x && current.center.y < next.center.y)
+               || (previous.center.y > current.center.y && current.center.x > next.center.x)){
+                [current setImage:[UIImage imageNamed:@"snake_body_left_down.png"]];
+            } else if ((previous.center.x > current.center.x && current.center.y > next.center.y)
+                       || (previous.center.y < current.center.y && current.center.x < next.center.x)){
+                [current setImage:[UIImage imageNamed:@"snake_body_up_right.png"]];
+            } else if ((previous.center.y < current.center.y && current.center.x > next.center.x)
+                       || (previous.center.x < current.center.x && current.center.y > next.center.y)){
+                [current setImage:[UIImage imageNamed:@"snake_body_up_left.png"]];
+            } else {
+                [current setImage:[UIImage imageNamed:@"snake_body_right_down.png"]];
+            }
+        }
+    }
+    
+    // Finally, fix the tail
+    if(current.center.x == next.center.x && current.center.y < next.center.y){
+        [next setImage:[UIImage imageNamed:@"snake_tail_up.png"]];
+    } else if (current.center.x == next.center.x && current.center.y > next.center.y){
+        [next setImage:[UIImage imageNamed:@"snake_tail_down.png"]];
+    } else if (current.center.y == next.center.y && current.center.x > next.center.x){
+        [next setImage:[UIImage imageNamed:@"snake_tail_right.png"]];
+    } else {
+        [next setImage:[UIImage imageNamed:@"snake_tail_left.png"]];
+    }
 }
 
 -(BOOL)isThereACollision{
@@ -155,7 +207,7 @@ const int START_Y = 185;
         
         gameHasStarted = YES;
         
-        snakeMovementTimer = [NSTimer scheduledTimerWithTimeInterval:0.3 target:self selector:@selector(SnakeMoving) userInfo:nil repeats:YES];
+        snakeMovementTimer = [NSTimer scheduledTimerWithTimeInterval:0.9 target:self selector:@selector(SnakeMoving) userInfo:nil repeats:YES];
         
         
     } else {

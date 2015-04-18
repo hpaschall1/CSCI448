@@ -207,7 +207,7 @@ const int START_Y = 185;
         
         gameHasStarted = YES;
         
-        snakeMovementTimer = [NSTimer scheduledTimerWithTimeInterval:0.9 target:self selector:@selector(SnakeMoving) userInfo:nil repeats:YES];
+        snakeMovementTimer = [NSTimer scheduledTimerWithTimeInterval:0.3 target:self selector:@selector(SnakeMoving) userInfo:nil repeats:YES];
         
         
     } else {

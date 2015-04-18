@@ -8,9 +8,9 @@
 
 #import "Game.h"
 
-const int MOVE_DISTANCE = 15;
-const int START_X = 195;
-const int START_Y = 195;
+const int MOVE_DISTANCE = 37;
+const int START_X = 185;
+const int START_Y = 185;
 
 @interface Game ()
 @property (strong, nonatomic) NSMutableArray *snakeBody;
@@ -30,7 +30,7 @@ const int START_Y = 195;
     
     foodCollected = 0;
     
-    lastButtonPressed = nil;
+    lastButtonPressed = rightButton;
     
     gameHasStarted = NO;
     gameHasEnded = NO;
@@ -39,7 +39,7 @@ const int START_Y = 195;
     
     // Create the 5 starting blocks
     _snakeBody = [[NSMutableArray alloc] init];
-    snakeLength = 5;
+    snakeLength = 3;
     
     for(int i=0; i < snakeLength; ++i){
         UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(START_X - (i * MOVE_DISTANCE), START_Y, MOVE_DISTANCE, MOVE_DISTANCE)];
@@ -57,8 +57,8 @@ const int START_Y = 195;
 
 -(void)placeFoodRandomly{
     // Randomly place a food
-    int randX = arc4random() % 23;
-    int randY = arc4random() % 23;
+    int randX = arc4random() % 8;
+    int randY = arc4random() % 8;
     foodPellet.frame = CGRectMake(randX * MOVE_DISTANCE + MOVE_DISTANCE, randY * MOVE_DISTANCE + MOVE_DISTANCE, MOVE_DISTANCE, MOVE_DISTANCE);
 }
 
@@ -100,16 +100,22 @@ const int START_Y = 195;
     }
 
     // See if we ran into a wall, game over
-    if(newHead.center.x < 15 || newHead.center.y < 15 || newHead.center.x > 360 || newHead.center.y > 360){
+    if(newHead.center.x < 37 || newHead.center.y < 37 || newHead.center.x > 338 || newHead.center.y > 338){
         [self gameOver];
     }
     
     // Run through the entire thing, changing sprites and detecting collisions
     if([self isThereACollision] == NO){
         // Fix the sprites
+        [self fixSnakeBodySprites];
     } else {
         [self gameOver];
     }
+}
+
+-(void)fixSnakeBodySprites{
+    // First, get the head pointing the right way
+    
 }
 
 -(BOOL)isThereACollision{
@@ -154,6 +160,8 @@ const int START_Y = 195;
         
     } else {
         
+        lastButtonPressed = sender;
+        
         if((sender == upButton && lastButtonPressed == downButton)
            || (sender == downButton && lastButtonPressed == upButton)
            || (sender == leftButton && lastButtonPressed == rightButton)
@@ -176,8 +184,6 @@ const int START_Y = 195;
             snakeY = 0;
         }
     }
-        
-    lastButtonPressed = sender;
 }
 
 @end

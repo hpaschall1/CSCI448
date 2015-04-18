@@ -12,21 +12,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="CDc-rQ-yfq">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="lBz-D0-N2W">
-                                <rect key="frame" x="137" y="309" width="100" height="50"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="lBz-D0-N2W">
+                                <rect key="frame" x="75" y="488" width="225" height="75"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.60331003289999996" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="Play">
+                                <state key="normal" image="start_button.png" backgroundImage="start_button_pressed.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <segue destination="ufD-wa-fgt" kind="modal" id="dSC-8M-yod"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="title_screen.png" id="CDc-rQ-yfq">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -39,7 +39,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-190.13333333333333" y="182.23333333333332"/>
+            <point key="canvasLocation" x="-190.5" y="181.5"/>
         </scene>
         <!--Game-->
         <scene sceneID="cHV-ux-0KF">
@@ -49,52 +49,52 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="n7d-gu-u1B">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="game_screen.png" id="n7d-gu-u1B">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.42244037829999997" alpha="1" colorSpace="calibratedWhite"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="MRN-o3-tfR">
-                                <rect key="frame" x="147" y="380" width="80" height="80"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="MRN-o3-tfR">
+                                <rect key="frame" x="150" y="413" width="75" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                <state key="normal" title="UP"/>
+                                <state key="normal" image="up_button.png"/>
                                 <connections>
                                     <action selector="DirectionalButtonPressed:" destination="ufD-wa-fgt" eventType="touchUpInside" id="euO-oc-ByE"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="aZB-Ne-1f5">
-                                <rect key="frame" x="147" y="540" width="80" height="80"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="aZB-Ne-1f5">
+                                <rect key="frame" x="150" y="567" width="75" height="75"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                <state key="normal" title="DOWN"/>
+                                <state key="normal" image="down_button.png"/>
                                 <connections>
                                     <action selector="DirectionalButtonPressed:" destination="ufD-wa-fgt" eventType="touchUpInside" id="qqS-uo-bFy"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="yej-fo-mke">
-                                <rect key="frame" x="227" y="460" width="80" height="80"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="UIr-wA-bNN">
+                                <rect key="frame" x="75" y="488" width="75" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                <state key="normal" title="RIGHT"/>
-                                <connections>
-                                    <action selector="DirectionalButtonPressed:" destination="ufD-wa-fgt" eventType="touchUpInside" id="as9-lZ-8OT"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="UIr-wA-bNN">
-                                <rect key="frame" x="67" y="460" width="80" height="80"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                <state key="normal" title="LEFT"/>
+                                <state key="normal" image="left_button.png"/>
                                 <connections>
                                     <action selector="DirectionalButtonPressed:" destination="ufD-wa-fgt" eventType="touchUpInside" id="rAF-3c-gIN"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="aQw-pj-MzK">
-                                <rect key="frame" x="-15" y="0.0" width="15" height="15"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="food_pellet.png" id="aQw-pj-MzK">
+                                <rect key="frame" x="-37" y="0.0" width="37" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="yej-fo-mke">
+                                <rect key="frame" x="225" y="488" width="75" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <state key="normal" image="right_button.png"/>
+                                <connections>
+                                    <action selector="DirectionalButtonPressed:" destination="ufD-wa-fgt" eventType="touchUpInside" id="as9-lZ-8OT"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.42244037828947373" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -118,6 +118,17 @@
             <point key="canvasLocation" x="259.5" y="181.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="down_button.png" width="75" height="75"/>
+        <image name="food_pellet.png" width="38" height="38"/>
+        <image name="game_screen.png" width="375" height="667"/>
+        <image name="left_button.png" width="75" height="80"/>
+        <image name="right_button.png" width="75" height="75"/>
+        <image name="start_button.png" width="225" height="75"/>
+        <image name="start_button_pressed.png" width="225" height="75"/>
+        <image name="title_screen.png" width="375" height="667"/>
+        <image name="up_button.png" width="75" height="80"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
